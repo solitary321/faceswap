@@ -233,8 +233,8 @@ class ConvertImage(DirectoryProcessor):
                         # TODO: This switch between 64 and 128 is a hack for now. We should have a separate cli option for size
                         image = rotate_image(image, face.r * -1)
                     else:
-                        image = converter.patch_image(image, face, 64 if "128" not in self.arguments.trainer else 128)
-                        # TODO: This switch between 64 and 128 is a hack for now. We should have a separate cli option for size
+                    image = converter.patch_image(image, face, 64 if "128" not in self.arguments.trainer else 128)
+                    # TODO: This switch between 64 and 128 is a hack for now. We should have a separate cli option for size
 
             output_file = get_folder(self.output_dir) / Path(filename).name
             cv2.imwrite(str(output_file), image)
